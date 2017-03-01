@@ -15,12 +15,11 @@ RUN apt-get update && apt-get install -y \
     libxslt-dev \
   && docker-php-ext-install -j$(nproc) \
     intl \
-    json \
-    iconv \
     mcrypt \
     xsl \
     sockets \
-    bcmath
+    bcmath \
+    pcntl
   
 RUN apt-get install -y \
     libevent-dev \

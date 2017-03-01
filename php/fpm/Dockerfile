@@ -15,14 +15,14 @@ RUN apt-get update && apt-get install -y \
     libxslt-dev \
   && docker-php-ext-install -j$(nproc) \
     intl \
-    json \
-    iconv \
     mcrypt \
     xsl \
     sockets \
-    bcmath
+    bcmath \
+    pcntl \
+    opcache
   
 RUN apt-get install -y \
     libevent-dev \
-  && pecl install ev-1.0.3 \
+  && pecl install ev-1.0.3 xdebug-2.5.1 \
   && docker-php-ext-enable ev
